@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.wuillemin</groupId>
+    <artifactId>wktgrammar</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>wktgrammar</name>
+    <description>A simple project holding the definition of WKT Grammar and using ANTLR4 for generating the Lexer and
+        the Parser
+    </description>
+    <url>https://bitbucket.org/ThomasWuillemin/wktgrammar</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Thomas Wuillemin</name>
+            <email>thomas.wuillemin@gmail.com</email>
+            <organization>Thomas Wuillemin</organization>
+            <organizationUrl>http://www.wuillemin.net</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <antlr.version>4.7</antlr.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:git://bitbucket.org/ThomasWuillemin/wktgrammar.git</connection>
+        <developerConnection>scm:git:ssh://bitbucket.org:ThomasWuillemin/wktgrammar.git</developerConnection>
+        <url>https://bitbucket.org/ThomasWuillemin/wktgrammar</url>
+    </scm>
+
+    <dependencies>
+
+        <!-- ANTLR 4 for generating the Grammar and the Lexer -->
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Build the sources with ANTLR4  -->
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>${antlr.version}</version>
+                <executions>
+                    <execution>
+                        <id>antlr</id>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Generate the javadoc including the generated sources  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <source>${project.basedir}/target/generated-sources/antlr4/**.java</source>
+                </configuration>
+            </plugin>
+
+            <!-- Generate the sources  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- For generating new version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+</project>
