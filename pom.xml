@@ -12,7 +12,7 @@
     <description>A simple project holding the definition of WKT Grammar and using ANTLR4 for generating the Lexer and
         the Parser
     </description>
-    <url>https://bitbucket.org/ThomasWuillemin/wktgrammar</url>
+    <url>https://github.com/twuillemin/wktgrammar</url>
 
     <licenses>
         <license>
@@ -38,9 +38,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org/ThomasWuillemin/wktgrammar.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/ThomasWuillemin/wktgrammar.git</developerConnection>
-        <url>https://bitbucket.org/ThomasWuillemin/wktgrammar</url>
+        <connection>scm:git:ssh://git@github.com/twuillemin/wktgrammar.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/twuillemin/wktgrammar.git</developerConnection>
+        <url>https://git@github.com/twuillemin/wktgrammar</url>
     </scm>
 
     <distributionManagement>

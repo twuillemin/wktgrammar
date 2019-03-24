@@ -103,4 +103,4 @@ and there Z, M and ZM counterparts, such as pointTaggedTextZ, pointTaggedTextM, 
 
 # Contact #
 
-Use the project page [https://bitbucket.org/ThomasWuillemin/wtkgrammar]
+Use the project page [https://github.com/twuillemin/wtkgrammar]

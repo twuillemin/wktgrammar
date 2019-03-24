@@ -116,6 +116,6 @@
  *
  * <p>Contact
  *
- * Use the project page [https://bitbucket.org/ThomasWuillemin/wtkgrammar]
+ * Use the project page [https://github.com/twuillemin/wtkgrammar]
  */
 package net.wuillemin.wktgrammar;
